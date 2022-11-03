@@ -1,0 +1,573 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Chakra Petch', sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+
+#block{
+  display: flex;
+  align-items: center;
+  flex-direction: c;
+  justify-content: center;
+  z-index: 1000;
+  background-color: rgb(252, 252, 252);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+#block img{
+  height: 30%;
+}
+
+
+
+
+.scroll{
+  z-index: 125;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 99%;
+  margin-top: 0.25%;
+  border-radius: 10px;
+  width: 0.5%;
+  background-color: rgba(128, 128, 128, 0.432);
+}
+.scroll1{
+
+  position: absolute;
+  background-color: white;
+  margin-top: 0.5vh;
+  height: 24%;
+  width: 50%;
+  border-radius: 15px;
+
+}
+
+
+
+h1{
+  font-size: 1.5vw;
+}
+/* #containernetuno h1{
+  font-size: 1vw;
+} */
+#containernetuno p{
+  margin-top: 10px;
+}
+
+#loader{
+  display: inline-flex;
+  position: absolute;
+  background-color: rgb(152, 224, 200);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.ball1{
+  margin-left: 100px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  
+  animation-timing-function: linear;
+  animation-name: jump;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-delay: -0.8s;
+  
+  border-radius: 10px;
+}
+
+.ball2{
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+
+  animation-timing-function: linear;
+  animation-name: jump;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-delay: -0.5s;
+
+  border-radius: 10px;
+}
+
+.ball3{
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+
+  animation-timing-function: linear;
+  animation-name: jump;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+
+
+  border-radius: 10px;
+}
+
+canvas{
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  /* left: 0; */
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.bgterra{
+  z-index: 105;
+  aspect-ratio: 960/960;
+  background-repeat: no-repeat;
+  background-image: url(svg/layered-peaks-haikei-top.svg);
+  /* background-image: url(svg/layered-peaks-haikei.svg), url(svg/layered-peaks-haikei-top.svg); */
+  background-position: top;
+  position: relative;
+  background-size: 40vw;
+}
+.bgbotterra{
+  display: flex;
+  z-index: 105;
+  aspect-ratio: 960/960;
+  background-repeat: no-repeat;
+  bottom: -10vw;
+  position: absolute;
+  width: 40vw;
+}
+
+
+
+.bgrightmarte{
+  z-index: 105;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+.bgleftmarte{
+  z-index: 105;
+  left: 0;
+  top: 0;
+}
+
+
+
+
+.bgmoon{
+  background-image: url(svg/layered-waves-haikei-moon-top.svg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 40vw;
+}
+.bgbotmoon{
+  left: 0;
+  bottom: -3.2%;
+  width: 40vw;
+}
+
+
+
+
+.container{
+  background-color: #96becab4;
+  display: none;
+
+  width: 40%;
+  height: 99.5%;
+
+  /* box-shadow: 0 0 10px gray; */
+
+  margin-left: 0.25%;
+
+
+  justify-content: center;
+  text-align: center;
+
+
+
+  position: absolute;
+  z-index: 100;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+  
+  animation: popup1 3s ease-out;
+
+  /* animation-name: popup1;
+  animation-duration: 3s;
+  animation-timing-function: ease-out; */
+}
+img.eu{
+  position: absolute;
+  display: block;
+  width: 50%;
+  margin-top: 2%;
+  left: 25%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgb(97, 97, 247);
+
+}
+
+.container > p.text{
+  line-height: 110%;
+  font-size: 20px;
+  margin-top: 55%;
+}
+
+
+
+
+.containermarte{
+  overflow: hidden;
+  display: none;
+  z-index: 100;
+  position: absolute;
+  height: 50%;
+  width: 0%;
+
+  color: rgb(255, 255, 255);
+
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+
+  margin-top: 0.25%;
+
+  background-color: #c1440ea6;
+
+  text-align: center;
+}
+.containermarte>h1{
+
+  margin-bottom: 10%;
+}
+.containermarte> .imgs > .imgsite1 >p, .containermarte> .imgs > .imgsite2 >p, .containermarte> .imgs > .imgsite3 >p{
+  margin-bottom: 5px;
+  font-size: 1.2vw;
+}
+img.sitesut{
+  width: 20vw;
+  /* position: absolute; */
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgb(255, 60, 0); 
+}
+.containermarte>.imgs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+.wrapmars{
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.alienmars{
+  position: absolute;
+  left: 4px;
+  z-index: 110;
+  transform: rotate(100deg);
+  top: 16.5vh;
+  height: 8vh;
+}
+
+.wrapgitmars{
+  display: flex;
+  /* background-color: rebeccapurple; */
+  height: 4vw;
+}
+.gitmars{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 100px; 
+  width: 4vw;
+}
+
+img.gitmars:hover{
+  background-color: rgba(152, 224, 200, 0.459);
+  box-shadow: 0 0 5px rgb(152, 224, 200); 
+  filter: grayscale(1);
+}
+.line{
+  background-color: white;
+  height: 100%;
+  width: 1px;
+  margin-left: 5px;
+}
+.obs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+  margin-left: 5px;
+}
+.obs p{
+  margin-top: 5px;
+}
+.wraprover{
+  display: flex;
+  position: absolute;
+  right: 0;
+  width: 20vw;
+  height: 100%;
+  /* background-color: rebeccapurple; */
+  top: 0;
+
+}
+#marsrover{
+  position: absolute;
+  right: 10px;
+  z-index: 120;
+  width: 40px;
+  transform: rotate(-51deg);
+}
+
+
+
+
+#containerlua{
+  height: 0%;
+  width: 40%;
+  background-color: rgba(128, 128, 128, 0.637);
+  position: absolute;
+  display: block;
+  z-index: 101;
+
+  overflow: hidden;
+  
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  margin-right: 0.25%;
+  
+  /* animation: growup 2s; */
+  
+  text-align: center;
+  
+  bottom: 0%;
+  right: 0;
+}
+.wraplua{
+  position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 6%;
+  /* background-color: rgba(0, 255, 255, 0.329); */
+}
+
+ul{
+  font-size: 1.5vh;
+}
+li{
+  margin-top: 5%;
+  font-weight: bold;
+}
+.usaflag{
+  position: absolute;
+  margin-bottom: 8%;
+  width: 5vw;
+  transform: rotate(10deg);
+}
+.wrapusa{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+
+#containernetuno{
+  position: absolute;
+  display: block;
+  z-index: 101;
+
+  text-align: center;
+
+  margin-top: 0.25%;
+  margin-bottom: 0.25%;
+
+
+  color: white;
+
+
+  overflow: hidden;
+
+  height: 99%;
+  width: 0%;
+
+  right: 0;
+
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-image: url(svg/neptune-background/stacked-waves-haikei-neptune.svg);
+  background-color: rgba(0, 0, 255, 0.658);
+}
+#containernetuno>h1{
+  position: absolute;
+  width: 20vw;
+  white-space: nowrap;
+}
+/* #containerlua {
+  width: 150px;
+  height: 45px;
+  background: black;
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+} */
+
+
+#containernetuno > .imgsctt > a > img, #containernetuno > .imgsctt > img{
+  width: 10vw;
+  border-radius: 50%;
+}
+.imgsctt{
+  margin-top: 6vh;
+  width: 20vw;
+  position: absolute;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  font-size: 1vw;
+  align-items: center;
+} 
+
+#containernetuno > .imgsctt > a > img:hover, #containernetuno > .imgsctt > img:hover{
+  box-shadow: 0 0 10px rgb(0, 225, 255); 
+}
+
+#containernetuno > .imgsctt > a{
+  display: block;
+  border-radius: 50%;
+  margin-top: 5vh;
+
+}
+
+
+
+.site1:hover{
+  width: 21vw;
+  box-shadow: 0 0 15px rgb(255, 60, 0); 
+}
+
+.containermarte > .imgs > .imgsite1,.imgsite2,.imgsite3{
+  font-size: 25px;
+} 
+.obs{
+  font-size: 1.2vh;
+}
+
+
+.imgsite1{
+  display: flex;
+  height: 100%;
+
+  width: 20vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.imgsite2{
+  margin-left: 5%;
+  margin-right: 5%;
+  
+  display: flex;
+  height: 100%;
+
+  width: 20vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.imgsite3{
+  display: flex;
+  height: 100%;
+
+  width: 20vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@keyframes growup {
+  from{height: 0%;}
+  to{height: 99.5%;}
+}
+
+
+@keyframes jump {
+  from{margin-top: 100px;}
+  to{margin-bottom: 100px;}
+}
+
+@keyframes popup1 {
+  from{height: 0;}
+  to{height: 99.5%;}
+}
+
+@keyframes popout1 {
+  from{height: 99.5%;}
+  to{height: 0;}
+}
+
+
+@keyframes popup2 {
+  from{width: 0;}
+  to{width: 99.5%;}
+}
+
+@keyframes popout2 {
+  from{width: 99.5%;}
+  to{width: 0;}
+}
+
+
+
+@keyframes bgterra {
+  from{background-position: 0% 200%;}
+  to{background-position: bottom;}
+}
+
+.under{
+  text-decoration: underline;
+}
