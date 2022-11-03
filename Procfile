@@ -1,0 +1,1 @@
+web: gunicorn Portfolio/main:app
