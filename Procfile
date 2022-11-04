@@ -1,1 +1,1 @@
-web: ./Portfolio/main npm start
+web: Portfolio/main npm start
