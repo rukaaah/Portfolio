@@ -118,7 +118,7 @@ for (let i = 0; i < 50; i++){
 
 
   
-const terra = new THREE.TextureLoader().load('imgs/terra.jpg')
+const terra = new THREE.TextureLoader().load('terra.767ee1dc.jpg')
 const terranormal = new THREE.TextureLoader().load('imgs/terra normal.jpg')
 
 const geometryterra = new THREE.SphereGeometry(10, 90, 30, 100);
