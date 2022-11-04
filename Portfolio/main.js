@@ -183,7 +183,7 @@ var planeta = "terra"
 var oldplan = "terra"
 var speed = 1000
 // planeta inicial sendo terra
-go("terra")
+GoTo("terra")
 animate()
 Array(1000).fill().forEach(addStar)
 
@@ -326,7 +326,7 @@ renderer.render(scene, camera)
 var martecam = false
 var terracam = false
 
-function go(plan){
+function GoTo(plan){
   
   if (plan == "netuno"){
 
@@ -465,7 +465,7 @@ window.addEventListener("wheel", (e) => {
 
     console.log("indo pra terra")
     ProxTecla = false
-    go("terra")
+    GoTo("terra")
     oldplan = "terra"
     console.log("o tamanho de marte é: ", martehtml.clientWidth)
 // ! animação de fechamento dos outros planetas 
@@ -526,7 +526,7 @@ window.addEventListener("wheel", (e) => {
     
     console.log("indo pra lua")
     ProxTecla = false
-    go("lua")
+    GoTo("lua")
     oldplan = "lua"
 // ! animação de fechamento dos outros planetas
         if (terrahtml.clientHeight != 0){
@@ -585,7 +585,7 @@ window.addEventListener("wheel", (e) => {
     
     console.log("indo pra marte")
     ProxTecla = false
-    go("marte")
+    GoTo("marte")
     oldplan = "marte"
     
     // ! animação de fechamento dos outros planetas
@@ -650,7 +650,7 @@ window.addEventListener("wheel", (e) => {
 
     console.log("indo pra netuno")
     ProxTecla = false
-    go("netuno")
+    GoTo("netuno")
     oldplan = "netuno"
 
 // ! animação de fechamento dos outros planetas 
