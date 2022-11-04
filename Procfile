@@ -1,1 +1,0 @@
-web: Portfolio/main npm start
