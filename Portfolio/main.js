@@ -2,7 +2,8 @@ import './style.css'
 import * as TWEEN from "@tweenjs/tween.js";
 import * as THREE from 'three';
 import { DoubleSide, LuminanceAlphaFormat, RGB_ETC1_Format, TorusGeometry, Vector3 } from 'three';
-// ! ARRUMAR O ZOOM DA PAGE
+// ! ARRUMAR O ZOOM DA PAGEad
+
 
 
 
@@ -36,12 +37,12 @@ const scene = new THREE.Scene();
 
 var bgmaterial = []
 
-const textureft = new THREE.TextureLoader().load('imgs/bg/space_ft.png');
-const texturebk = new THREE.TextureLoader().load('imgs/bg/space_bk.png');
-const textureup = new THREE.TextureLoader().load('imgs/bg/space_up.png');
-const texturedn = new THREE.TextureLoader().load('imgs/bg/space_dn.png');
-const texturert = new THREE.TextureLoader().load('imgs/bg/space_rt.png');
-const texturelf = new THREE.TextureLoader().load('imgs/bg/space_lf.png');
+const textureft = new THREE.TextureLoader().load('../bg/space_ft.png');
+const texturebk = new THREE.TextureLoader().load('../bg/space_bk.png');
+const textureup = new THREE.TextureLoader().load('../bg/space_up.png');
+const texturedn = new THREE.TextureLoader().load('../bg/space_dn.png');
+const texturert = new THREE.TextureLoader().load('../bg/space_rt.png');
+const texturelf = new THREE.TextureLoader().load('../bg/space_lf.png');
 
 bgmaterial.push(new THREE.MeshBasicMaterial({map: textureft}));
 bgmaterial.push(new THREE.MeshBasicMaterial({map: texturebk}));
@@ -74,7 +75,7 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 
-const sol = new THREE.TextureLoader().load('imgs/sun.jpg');
+const sol = new THREE.TextureLoader().load('../sun.jpg');
 
 const geometrysol = new THREE.SphereGeometry(250, 400, 200);
 const materialsol = new THREE.MeshStandardMaterial({
@@ -86,8 +87,8 @@ const sun = new THREE.Mesh(geometrysol, materialsol);
 sun.position.set(0, 0, 0)
 
 
-const sunglow = new THREE.TextureLoader().load('imgs/sunglow.png');
-const sundis = new THREE.TextureLoader().load('imgs/sundis.png');
+const sunglow = new THREE.TextureLoader().load('../sunglow.png');
+const sundis = new THREE.TextureLoader().load('../sundis.png');
 
 
 var Glow = []
@@ -118,8 +119,8 @@ for (let i = 0; i < 50; i++){
 
 
   
-const terra = new THREE.TextureLoader().load('terra.767ee1dc.jpg')
-const terranormal = new THREE.TextureLoader().load('imgs/terra normal.jpg')
+const terra = new THREE.TextureLoader().load('../terra.jpg')
+const terranormal = new THREE.TextureLoader().load('../terra normal.jpg')
 
 const geometryterra = new THREE.SphereGeometry(10, 90, 30, 100);
 const materialterra = new THREE.MeshStandardMaterial({ map: terra, normalMap: terranormal });
@@ -130,8 +131,8 @@ const earth = new THREE.Mesh(geometryterra, materialterra)
 earth.rotation.set( 0, 0, - Math.PI * 23 / 180 );
 
 
-const lua = new THREE.TextureLoader().load('imgs/moon.jpg')
-const luanormal = new THREE.TextureLoader().load('imgs/moon normal.png')
+const lua = new THREE.TextureLoader().load('../moon.jpg')
+const luanormal = new THREE.TextureLoader().load('../moon normal.png')
 
 
 const geometrylua = new THREE.SphereGeometry(2.72, 90, 30, 100);
@@ -144,8 +145,8 @@ earth.add(moon)
 // moon.add(new THREE.AxesHelper(10))
 
 
-const marte = new THREE.TextureLoader().load('imgs/mars.jpg')
-const martenormal = new THREE.TextureLoader().load('imgs/mars normal.jpg')
+const marte = new THREE.TextureLoader().load('../mars.jpg')
+const martenormal = new THREE.TextureLoader().load('../mars normal.jpg')
 
 const geometrymars = new THREE.SphereGeometry(5.31, 90, 30, 100);
 const materialmars = new THREE.MeshStandardMaterial({ map: marte, normalMap: martenormal })
@@ -164,7 +165,7 @@ const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
 
 
 
-const netuno = new THREE.TextureLoader().load('imgs/neptune.jpg');
+const netuno = new THREE.TextureLoader().load('../neptune.jpg');
 
 const geometrynetuno = new THREE.SphereGeometry(38, 90, 30, 100);
 const materialnetuno = new THREE.MeshStandardMaterial({ map: netuno})
